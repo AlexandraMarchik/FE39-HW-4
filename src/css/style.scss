@@ -1,0 +1,128 @@
+
+@import "fonts.scss";
+@import"nullstyle.scss";
+
+$color:#371030;
+$margin:20px;
+
+%border{
+   border-bottom: 1px solid #371030;
+}
+@mixin display($d,$j) {
+   display:$d;
+   justify-content: $j;
+   
+}
+@mixin style($f,$fz) {
+   font-family:$f;
+   font-size: $fz;
+   
+}
+
+.main {
+   width: 100%;
+
+   .main-form {
+      background-image:url('../img/1-flowers\ 2.png'), url('../img/подложка.png');
+      background-size:auto auto, cover;
+      background-position: -2.5em -9.4em,0 0 ;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 560px;
+      @include style('Montserrat',16px);
+      letter-spacing: 0.04em;
+      color: $color;
+
+      .container {
+         max-width: 808px;
+         margin: 0 auto;
+
+         .form-wrapper {
+            @include display(flex,space-between);
+            background: #FBF7F6;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            margin-top: 120px;
+
+            .form-content {
+               display: flex;
+               flex-direction: column;
+               padding: 31px 0 0 40px;
+               & input::placeholder{
+                  color: $color;
+               }
+               & textarea::placeholder{
+                  color: $color;
+               }
+               .content-text {
+                  width: 324px;
+                  @include style('Montserrat-Bold',15px);
+                  line-height: 18px;
+               }
+               .form__info{
+                  width: 144px;
+                  @extend %border;
+                  margin-right: 31px;
+                  margin-top: 18px;
+                  margin-bottom: $margin;
+               }
+               .form__type{
+                  width: 324px;
+                  @extend %border;
+                  margin-bottom: $margin;
+                  height: 20px;
+                  outline: none;
+                  resize: none;
+                  overflow: hidden;
+               }
+               .button {
+                  @include display(flex,center);
+                  align-items: center;
+                  width: 324px;
+                  height: 55px;
+                  background: #FFB0BA;
+                  border-radius: 100px;
+                  @include style('Montserrat-Black',16px);
+                  line-height: 20px;
+                  text-align: center;
+                  color: #9A3C48;
+                     &:hover{
+                        box-shadow: 3px 3px 0px 3px #DE8E98;
+                     }
+               }
+            }
+
+            .form-bg {
+               background-image: url('../img/cover9\ 1.jpg');
+               background-repeat: no-repeat;
+               width: 405px;
+               height: 351px;
+               border-top-right-radius:15px;
+               border-bottom-right-radius:15px;
+            }
+         }
+      }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
